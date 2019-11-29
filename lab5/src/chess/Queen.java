@@ -2,11 +2,11 @@ package chess;
 
 import java.awt.*;
 
-public class King extends Piece{
+public class Queen extends Piece {
 
-    public King(int x, int y, Color setColor) {
+    public Queen(int x, int y, Color setColor) {
         super(x, y, setColor);
-        setName("King");
+        setName("Queen");
     }
 
     @Override
