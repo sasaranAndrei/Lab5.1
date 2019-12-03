@@ -14,7 +14,6 @@ public class Rook extends Piece{
         if (chessTable.piece[new_coordX][new_coordY] != null && chessTable.piece[new_coordX][new_coordY].color == chessTable.piece[coordX][coordY].color) { // already a piece there
              // can t take an own piece
                 return false;
-
         }
         else { // if there s nothing there
                 // see if there s smth in between
@@ -53,10 +52,13 @@ public class Rook extends Piece{
     @Override
     void movePiece(int new_coordX, int new_coordY, ChessTable chessTable) {
         if (isValidMove(new_coordX, new_coordY, chessTable)){
+            if (chessTable.piece[new_coordX][new_coordY] != null){
+                System.out.println("Piece captured");
+            }
             chessTable.piece[coordX][coordY] = null;
-            chessTable.piece[new_coordX][new_coordY] = this;
             this.coordX = new_coordX;
             this.coordY = new_coordY;
+            chessTable.piece[coordX][coordY] = this;
             System.out.println("Piece moved successfully");
         }
         else {

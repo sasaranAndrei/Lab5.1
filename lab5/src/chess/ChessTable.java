@@ -34,8 +34,8 @@ public class ChessTable {
         piece[0][3] = new Queen(0,3,Color.BLACK);
         piece[7][3] = new Queen(0,3,Color.WHITE); // Queens
 
-        piece[0][4] = new Queen(0,4,Color.BLACK);
-        piece[7][4] = new Queen(0,4,Color.WHITE); // Kings
+        piece[0][4] = new King(0,4,Color.BLACK);
+        piece[7][4] = new King(0,4,Color.WHITE); // Kings
     }
 
     public Piece[][] getPiece() {
@@ -61,22 +61,30 @@ public class ChessTable {
     void printRow (Piece[] row){
         for (Piece i : row) {
             if (i != null) {
-                System.out.print(i.name + " ");
-                System.out.print("\t");
+                if (i.color == Color.WHITE){
+                    System.out.print(i.name.toUpperCase());
+                }
+                else {
+                    System.out.print(i.name.toLowerCase());
+                }
+                System.out.print("\t\t");
             }
             else {
-                System.out.print("\t");
+                System.out.print("    ");
+                System.out.print("\t\t");
             }
         }
         System.out.println();
     }
 
     public void printChessTable (){
+
         System.out.print("\t");
         for (int i = 0; i < 8; i++){
-            System.out.print(i + "\t\t");
+            System.out.print(i + "\t\t\t");
         }
         System.out.println();
+
         for (int i = 0; i < 8; i++){
             System.out.print(i + "\t");
             printRow(piece[i]);
