@@ -35,7 +35,6 @@ public class MainClass {
         chess.printChessTable();
         chess.piece[6][4].movePiece(4,4,chess);
         chess.printChessTable();
-       // chess.piece[0][3].movePiece(1,4,chess);
-        chess.printChessTable();
+
     }
 }
